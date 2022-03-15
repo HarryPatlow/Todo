@@ -1,40 +1,81 @@
 {% extends 'Tasks/layout.html' %}
+{% load static %}
 {% block title %} 
     Home
 {% endblock %}
 
 {% block body %}
-       
+    <style>
+        .list-group{
+            margin: 30px 0px 30px 0px;
+        }
+        #d{
+            background-color: rgb(41, 45, 53);
+            color: aliceblue;
+            border: none;
+            margin: 1px;
+        }
+        #d:hover{
+            background-color: rgb(75, 81, 92);
+            color: aliceblue;
+        }
+        #l{
+            color: rgb(41, 45, 53);
+            border: none;
+            margin: 1px;
+            background-color: rgb(252, 252, 252);
+        }
+        #l:hover{
+            background-color: rgb(245, 245, 245);
+            color: rgb(41, 45, 53);
+        }
 
+    </style>
+    
+    <main style="margin: 40px;">
       <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-          <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-          <button class="btn btn-primary btn-lg" type="button">Example button</button>
+          <h1 class="display-5 fw-bold">Keep track of your Needs</h1>
+          <p class="col-md-8 fs-4">Todotron is the best place for you to add your tasks and keep track of it. Priorotize your tasks based on your need. And feel the satisfaction of checking them off</p>
+          <a href="{% url 'tasks' %}"><button class="btn btn-primary btn-lg" type="button">All Tasks</button></a>
+          
         </div>
       </div>
   
       <div class="row align-items-md-stretch">
         <div class="col-md-6">
           <div class="h-100 p-5 text-white bg-dark rounded-3">
-            <h2>Change the background</h2>
-            <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
-            <button class="btn btn-outline-light" type="button">Example button</button>
+            <h2>Big Cheeses</h2>
+            <p>Here are your most important tasks based on the Priority you set(>7) </p>
+            <ul class="list-group">
+                {% for task in important %}
+                <li class="list-group-item" id ="d" >
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                  {{ task.name }}
+                </li>
+                {% endfor %}
+              </ul>
+            <button class="btn btn-outline-light" type="button">All Important Tasks</button>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="h-100 p-5 bg-light border rounded-3">
-            <h2>Add borders</h2>
-            <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-            <button class="btn btn-outline-secondary" type="button">Example button</button>
+          <div class="h-100 p-5 bg-light rounded-3">
+            <h2>Basic Stuff</h2>
+            <p>Here are your regular tasks based on the Priority you set(<7) </p>
+            <ul class="list-group">
+                {% for task in basic %}
+                <li class="list-group-item" id ="l" >
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                  {{ task.name }}
+                </li>
+                {% endfor %}
+              </ul>
+              <button class="btn btn-outline-dark" type="button">All Important Tasks</button>
           </div>
         </div>
-      </div>
-  
-      <footer class="pt-3 mt-4 text-muted border-top">
-        &copy; Todotron 2023
-      </footer>
+        
+      
     </div>
-  
+</main>
       
 {% endblock %}
