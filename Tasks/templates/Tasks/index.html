@@ -5,7 +5,141 @@
 {% endblock %}
 
 {% block body %}
+    <script>//dedad6
+        document.addEventListener('DOMContentLoaded',()=>{
+            document.querySelector('#prior').onclick = () =>{
+                if (document.querySelector('#prior').value >=7){
+                    document.querySelector('#prior').style.backgroundColor = "rgb(33,37,41)"
+                    document.querySelector('#prior').style.color = "rgb(236, 240, 241)"
+                    document.querySelector('#date').style.filter = "invert(100%)"
+                    document.querySelector('#date').style.color = "rgb(33,37,41)"
+                    document.querySelector('#date').style.backgroundColor = "#dedad6"
+                    document.querySelector('#time').style.filter = "invert(100%)"
+                    document.querySelector('#time').style.color = "rgb(33,37,41)"
+                    document.querySelector('#time').style.backgroundColor = "#dedad6"
+
+                    document.querySelector('.form-control').style.filter = "invert(100%)"
+                    document.querySelector('.form-control').style.color = "rgb(33,37,41)"
+                    document.querySelector('.form-control').style.backgroundColor = "#dedad6"
+                } else if (document.querySelector('#prior').value <=7){
+                    document.querySelector('#prior').style.backgroundColor = "rgb(236, 240, 241)"
+                    document.querySelector('#prior').style.color = "rgb(33,37,41)"
+                    document.querySelector('#date').style.filter = ""
+                    document.querySelector('#date').style.color = "#95a5a6"
+                    document.querySelector('#date').style.backgroundColor = "rgb(236, 240, 241)"
+
+                    document.querySelector('#time').style.filter = ""
+                    document.querySelector('#time').style.color = "rgb(65, 65, 65)"
+                    document.querySelector('#time').style.backgroundColor = "rgb(236, 240, 241)"
+                    
+                    document.querySelector('.form-control').style.filter = ""
+                    document.querySelector('.form-control').style.color = "rgb(65, 65, 65)"
+                    document.querySelector('.form-control').style.backgroundColor = "white"
+                }
+                
+            }
+
+            // document.querySelector(".add").onclick = () => {
+            //     var name = document.querySelector('.form-control').value
+            //     var cond = document.querySelector('.form-control').value != '' && document.querySelector('.form-control').value != ''
+            //     if (document.querySelector('#prior').value>=7 && cond){
+            //         li = document.createElement(`<li class="list-group-item" id = "d" style="border-radius: 7px;"><nav class="navbar navbar-light" ><div class="container-fluid"><div><input class="form-check-input me-1" type="checkbox" value="" aria-label="...">${name}</div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></div></nav></li><div style="height: 5px;"></div>`)
+            //     }else{
+            //         li = document.createElement(`<li class="list-group-item" id = "l" style="border-radius: 7px;"><nav class="navbar navbar-light" ><div class="container-fluid"><div><input class="form-check-input me-1" type="checkbox" value="" aria-label="...">${name}</div></div></nav></li><div style="height: 5px;"></div>`)
+            //     }
+            //     document.querySelector("#all").append(li)
+            // }
+        })
+    </script>
     <style>
+                /* Removes the clear button from date inputs */
+        input[type="time"]::-webkit-clear-button {
+            display: none;
+        }
+
+        /* Removes the spin button */
+        input[type="time"]::-webkit-inner-spin-button { 
+            display: none;
+        }
+
+        /* Always display the drop down caret */
+        input[type="time"]::-webkit-calendar-picker-indicator {
+            color: #2c3e50;
+            border-radius: 20px;
+        }
+
+        /* A few custom styles for date inputs */
+        input[type="time"] {
+            appearance: none;
+            -webkit-appearance: none;
+            color: #95a5a6;
+            font-family: "Helvetica", arial, sans-serif;
+            font-size: 18px;
+            border:1px solid #ecf0f1;
+            background:#ecf0f1;
+            padding:5px;
+            display: inline-block !important;
+            visibility: visible !important;
+        }
+
+        input[type="time"], focus {
+            color: #95a5a6;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+        }
+        input[type=date]{
+            background-color: rgb(247, 248, 248);
+            margin-left: 10px;
+            padding: 10px;
+            border-radius: 20px;
+            color: rgb(65, 65, 65);
+            margin-left: 10px;
+            
+        }
+                /* Removes the clear button from date inputs */
+        input[type="date"]::-webkit-clear-button {
+            display: none;
+        }
+
+        /* Removes the spin button */
+        input[type="date"]::-webkit-inner-spin-button { 
+            display: none;
+        }
+
+        /* Always display the drop down caret */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            color: #2c3e50;
+            border-radius: 20px;
+        }
+
+        /* A few custom styles for date inputs */
+        input[type="date"] {
+            appearance: none;
+            -webkit-appearance: none;
+            color: #95a5a6;
+            font-family: "Helvetica", arial, sans-serif;
+            font-size: 18px;
+            border:1px solid #ecf0f1;
+            background:#ecf0f1;
+            padding:5px;
+            display: inline-block !important;
+            visibility: visible !important;
+        }
+
+        input[type="date"], focus {
+            color: #95a5a6;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+        }
+        input[type=time]{
+            background-color: rgb(247, 248, 248);
+            margin-left: 10px;
+            padding: 10px;
+            border-radius: 20px;
+            color: rgb(65, 65, 65);
+        }
         .list-group{
             margin: 30px 0px 30px 0px;
         }
@@ -16,8 +150,9 @@
             margin: 1px;
         }
         #d:hover{
-            background-color: rgb(75, 81, 92);
+            background-color: rgb(45, 49, 58);;
             color: aliceblue;
+            transform: scale(1.005);
         }
         #l{
             color: rgb(41, 45, 53);
@@ -29,18 +164,57 @@
             background-color: rgb(245, 245, 245);
             color: rgb(41, 45, 53);
         }
+       .list-group-main{
+           font-size: 20px;
+           margin: 5px 130px 5px 130px;
+           width:75%;
+           display: flex;
+           justify-content: center;
+           border: none;
+       }
+       .list-group-item{
+           border: none;
+           margin-bottom: 10px;
+           background-color: rgb(253, 253, 253);
+       }
+       .list-group-item:hover{
+           border: none;
+           margin-bottom: 10px;
+           background-color: rgb(250, 250, 250);
+       }
+       .form-check-input{
+           margin-right: 15px;
+       }
+       .input-group{
+           height: 50px;
+       }
+       .add:hover{
+           transform: scale(0.95);
+       }
+       #prior{
+           background-color: rgb(236, 240, 241);
+           margin: 0px 5px;
+           border: none;
+           width: 50px;
+           height: 50px;
+           border-radius: 15px;
+           text-align: center;
+           padding-left: 16px;
+       }
+       svg:hover{
+           transform: scale(1.2);
+       }
+       #imp:hover{
+            color: gold;
+       }
+       #del:hover{
+           color: red;
 
+       }
     </style>
     
     <main style="margin: 40px;">
-      <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">Keep track of your Needs</h1>
-          <p class="col-md-8 fs-4">Todotron is the best place for you to add your tasks and keep track of it. Priorotize your tasks based on your need. And feel the satisfaction of checking them off</p>
-          <a href="{% url 'tasks' %}"><button class="btn btn-primary btn-lg" type="button">All Tasks</button></a>
-          
-        </div>
-      </div>
+      
   
       <div class="row align-items-md-stretch">
         <div class="col-md-6">
@@ -50,7 +224,7 @@
             <ul class="list-group">
                 {% for task in important %}
                 <li class="list-group-item" id ="d" >
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                  <input class="form-check-input me-1" type="checkbox" name="ids" value="{{ task.id }}" id="{{ task.id }}" aria-label="...">
                   {{ task.name }}
                 </li>
                 {% endfor %}
@@ -76,6 +250,158 @@
         
       
     </div>
+   <br><br><br>
+   <nav class="navbar navbar-light" style="margin: 0px 40px 40px 40px;">
+       <div class="container-fluid">
+           <h1>All Tasks</h1>
+       </div>
+     </nav>
+     <div class="row align-items-md-stretch" style="display:flex; justify-content: center;">
+       <ul class="list-group list-group-main" id = "all" style="display:flex; justify-content: center;">
+           {% for task in important %}
+           <form action="{% url 'complete' task.id %}" method="post" id="complete-form">
+               {% csrf_token %}
+           <li class="list-group-item" id = "d" style="border-radius: 7px;">
+               <nav class="navbar navbar-light" >
+               <div class="container-fluid">
+                   <div>
+                       <input id="status" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                       {{ task.name }}
+                   </div>
+                   <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" id="imp">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    <form action="{% url 'delete' task.id %}" method="post">
+                        <button type="submit" style="border: none; background-color: rgba(0, 0, 0, 0); color: white;">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" style="margin-left: 20px;" id ="del">
+                                 <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                 <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                               </svg>
+                            </div>
+                        </button>
+                        </form>
+                   </div>
+                   
+               </div>
+           </nav>
+           </li>
+        </form>
+           <div style="height: 5px;"></div>
+           {% endfor %}
+           {% for task in basic %}
+           <form action="{% url 'complete' task.id %}" method="post" id="complete-form">
+            {% csrf_token %}
+                   <li class="list-group-item" id = "l" style="border-radius: 7px;">
+                       <nav class="navbar navbar-light" >
+                           <div class="container-fluid">
+                               <div>
+                                   <input id="status" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                   {{ task.name }}
+                               </div>
+                               <form action="{% url 'delete' task.id %}" method="post">
+                                <button type="submit" style="border: none; background-color: rgba(0, 0, 0, 0); color: white;">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" style="margin-left: 20px;" id ="del">
+                                         <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                         <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                       </svg>
+                                    </div>
+                                </button>
+                                </form>
+                           </div>
+                       </nav>
+                   </li>
+            </form>          
+        {% endfor %}
+    </ul>
+</div>
+
+
+<!-- COMPLETED TASKS -->
+
+
+<nav class="navbar navbar-light" style="margin: 0px 40px 40px 40px;">
+    <div class="container-fluid">
+        <h1>Completed</h1>
+    </div>
+  </nav>
+  <div class="row align-items-md-stretch" style="display:flex; justify-content: center;">
+    <ul class="list-group list-group-main" id = "all" style="display:flex; justify-content: center;">
+        {% for task in important_done %}
+        <form action="{% url 'complete' task.id %}" method="post" id="complete-form">
+            {% csrf_token %}
+        <li class="list-group-item" id = "d" style="border-radius: 7px;">
+            <nav class="navbar navbar-light" >
+            <div class="container-fluid">
+                <div>
+                    <input id="status" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                    {{ task.name }}
+                </div>
+                <div>
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16" id="imp">
+                     <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                 </svg>
+            <form action="{% url 'delete' task.id %}" method="post">
+            <button type="submit" style="border: none; background-color: rgba(0, 0, 0, 0); color: white;">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" style="margin-left: 20px;" id ="del">
+                     <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                     <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                   </svg>
+                </div>
+            </button>
+            </form>
+        </div>
+        </nav>
+        </li>
+     </form>
+        <div style="height: 5px;"></div>
+        {% endfor %}
+        {% for task in basic_done %}
+        <form action="{% url 'complete' task.id %}" method="post" id="complete-form">
+         {% csrf_token %}
+                <li class="list-group-item" id = "l" style="border-radius: 7px;">
+                    <nav class="navbar navbar-light" >
+                        <div class="container-fluid">
+                            <div>
+                                <input id="status" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                {{ task.name }}
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" style="margin-left: 20px;" id ="del">
+                             <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                             <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                           </svg>
+                        </div>
+                    </nav>
+                </li>
+         </form>          
+     {% endfor %}
+ </ul>
+</div>
 </main>
+<form style="display:flex; justify-content: center;" action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    <div class="input-group" style="width: 77%; display: flex; justify-content: center;">
+        <input type="text" class="form-control" style="border-radius: 30px; font-size: 20px; margin-left: 10px;" name="name">
+        <input type="date" style="border: none; border-radius: 20px; margin: 0px 5px 0px 5px; padding: 0px 20px;" id="date" name="date">
+        <input type="time" style="border: none; background-color: rgb(236, 240, 241); border-radius: 20px;" id="time" name="time" >
+        <input type="number" max="10" min="0" id="prior" name="priority" value="5">
+        <button type="submit" style="border: none; background-color: rgba(255,255,255,0);" class="add">
+            <span class="input-group-text"style="background-color: rgba(255, 255, 255, 0); border:none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                  </svg>
+            </span>
+        </button>
+        
+      </div>
+  </form>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    $('#status').change(function(){
+        $('#complete-form').submit()
+    });
+  </script>
+  
       
 {% endblock %}
