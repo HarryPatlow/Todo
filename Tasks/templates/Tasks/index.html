@@ -211,6 +211,16 @@
            color: red;
 
        }
+
+       .donel{
+            opacity: 0.75;
+            text-decoration: line-through;
+
+       }
+       .doned{
+            opacity: 0.75;
+            text-decoration: line-through;
+       }
     </style>
     
     <main style="margin: 40px;">
@@ -330,11 +340,11 @@
         {% for task in important_done %}
         <form action="{% url 'complete' task.id %}" method="post" id="complete-form">
             {% csrf_token %}
-        <li class="list-group-item" id = "d" style="border-radius: 7px;">
+        <li class="list-group-item doned" id = "d" style="border-radius: 7px;">
             <nav class="navbar navbar-light" >
             <div class="container-fluid">
                 <div>
-                    <input id="status" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                    <input id="status" class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
                     {{ task.name }}
                 </div>
                 <div>
@@ -359,11 +369,11 @@
         {% for task in basic_done %}
         <form action="{% url 'complete' task.id %}" method="post" id="complete-form">
          {% csrf_token %}
-                <li class="list-group-item" id = "l" style="border-radius: 7px;">
+                <li class="list-group-item donel" id = "l" style="border-radius: 7px;">
                     <nav class="navbar navbar-light" >
                         <div class="container-fluid">
                             <div>
-                                <input id="status" class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                <input id="status" class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
                                 {{ task.name }}
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" style="margin-left: 20px;" id ="del">
@@ -396,11 +406,22 @@
       </div>
   </form>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script>
+      window.onload = () => {
+        if (window.location.href != 'http://localhost:8000/'){
+            window.location.href = 'http://localhost:8000/'
+        }
+    }
+  </script>
 
   <script type="text/javascript">
     $('#status').change(function(){
         $('#complete-form').submit()
     });
+    // setTimeout(function(){
+    //         window.location.replace = "{% url 'index' %}";
+    // },500)
+    
   </script>
   
       
